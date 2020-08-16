@@ -1,41 +1,36 @@
-# Ubuntu Customized Images
+# Ubuntu Images
+
+This repository links with https://hub.docker.com/r/ma3310/ubuntu.
 
 ## ma3310/ubuntu:20.04-tools
 
-Image ma3310/ubuntu:20.04-tools contains necessary diagnostic tools to save time for people who work from official Ubuntu image.
-These tools are from official repository.
+Image ma3310/ubuntu:20.04-tools integrates necessary utility tools to save time for users who need use Ubuntu image to diagnose system stauts, below tools are from official repository.
 
-| Package   | Command  | Function                  |
-|-----------|----------|---------------------------|
-| curl      | curl     |                           |
-| mycli     | mycli    | MySQL/MariaDB client tool |
-| net-tools | ifconfig |                           |
-|           | netstat  |                           |
-|           | route    |                           |
+| Package       | Command  | Function                  |
+|---------------|----------|---------------------------|
+| curl          | curl     |                           |
+| iputils-ping  | ping     |                           |
+| mycli         | mycli    | MySQL/MariaDB client tool |
+| net-tools     | ifconfig |                           |
+|               | netstat  |                           |
+|               | route    |                           |
 
-``` bash
-# 发布镜像前需登录镜像仓库
-docker login
-
-# 构建/发布/部署客制化 ubuntu 20.04 镜像
-docker build . -t ma3310/ubuntu:20.04-tools
-docker push ma3310/ubuntu:20.04-tools
-docker pull ma3310/ubuntu:20.04-tools
-
-
-# 启动客制化 ubuntu 镜像
-docker run --rm -it --network=csk_default -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
-docker run --rm -it -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
-docker run --rm -it --network=host -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
-```
-
-### How to use
+### Usage
 
 #### Docker
 
 ``` bash
-# Container will be automatically removed after issue exit command
+# Container will be automatically removed after issue exit command.
 docker run --rm -it ma3310/ubuntu:20.04-tools
+
+# Use own zsh environment to initilize console settings.
+docker run --rm -it -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
+
+# Diagnose localhost envrionment.
+docker run --rm -it --network=host -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
+
+# Diagnose docker/compose network envrionment.
+docker run --rm -it --network=csk_default -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
 ```
 
 #### Kubernets
@@ -48,4 +43,19 @@ kubectl run -i --tty --image=ma3310/ubuntu:20.04-tools --restart=Never --rm=true
 ``` bash
 # 根据官方镜像 ubuntu:20.04 启动容器
 docker run --rm -it ubuntu:20.04
+```
+
+
+## Build your own images
+
+Users could also use Dockerfiles in this repository to build and release own images through docker commands.
+
+``` bash
+# Login Docker Hub.
+docker login
+
+# Build / Publish / Deploy images.
+docker build . -t ma3310/ubuntu:20.04-tools
+docker push ma3310/ubuntu:20.04-tools
+docker pull ma3310/ubuntu:20.04-tools
 ```
