@@ -1,7 +1,6 @@
 # Ubuntu Customized Images
 
-## Customized Ubuntu
-### ma3310/ubuntu:20.04-tools
+## ma3310/ubuntu:20.04-tools
 
 Image ma3310/ubuntu:20.04-tools contains necessary diagnostic tools to save time for people who work from official Ubuntu image.
 These tools are from official repository.
@@ -28,6 +27,21 @@ docker pull ma3310/ubuntu:20.04-tools
 docker run --rm -it --network=csk_default -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
 docker run --rm -it -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
 docker run --rm -it --network=host -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
+```
+
+### How to use
+
+#### Docker
+
+``` bash
+# Container will be automatically removed after issue exit command
+docker run --rm -it ma3310/ubuntu:20.04-tools
+```
+
+#### Kubernets
+```bash
+# Pod will be automatically removed after issue exit command
+kubectl run -i --tty --image=ma3310/ubuntu:20.04-tools --restart=Never --rm=true ubuntu-20.04-tools
 ```
 
 ## Official 20.04
