@@ -1,6 +1,6 @@
 # Ubuntu Images
 
-This repository links with https://hub.docker.com/r/ma3310/ubuntu.
+Normally when people start basic ubuntu container, they want to check systems / network environment, but original released Ubuntu offical images are lack of these tools.
 
 ## ma3310/ubuntu:20.04-tools
 
