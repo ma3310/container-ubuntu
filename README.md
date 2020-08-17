@@ -12,6 +12,7 @@ Image ma3310/ubuntu:20.04-tools integrates below tools are from official reposit
 |---------------|----------|---------------------------|
 | curl          | curl     |                           |
 | iputils-ping  | ping     |                           |
+| procps        | ps       |                           |
 | mycli         | mycli    | MySQL/MariaDB client tool |
 | net-tools     | ifconfig |                           |
 |               | netstat  |                           |
