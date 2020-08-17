@@ -25,13 +25,13 @@ Image ma3310/ubuntu:20.04-tools integrates below tools are from official reposit
 # Container will be automatically removed after issue exit command.
 docker run --rm -it ma3310/ubuntu:20.04-tools
 
-# Use own zsh environment to initilize console settings.
+# Use own zsh environment to initialize console settings.
 docker run --rm -it -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
 
-# Diagnose localhost envrionment.
+# Diagnose localhost environment.
 docker run --rm -it --network=host -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
 
-# Diagnose docker/compose network envrionment.
+# Diagnose docker/compose network environment.
 docker run --rm -it --network=csk_default -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
 ```
 
