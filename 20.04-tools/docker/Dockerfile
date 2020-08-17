@@ -9,6 +9,7 @@ RUN apt-get update && apt-get upgrade -y && apt install -y \
   curl \
   iproute2 \
   iputils-ping \
+  less \
   lynx \
   mariadb-client \
   mycli \
