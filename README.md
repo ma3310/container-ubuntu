@@ -1,12 +1,12 @@
 # Ubuntu Images
 
-Normally when people start basic ubuntu container, they want to check systems / network environment, but original released Ubuntu offical images are lack of these tools.
+Normally when people start ubuntu container, they want to check system stutus or network environment, but original offical Ubuntu images are lack of necessary tools by default. This repository integrates essential diagnostic tools from official and most famous 3rd part repositories, and is connected to Docker Hub to provide handy images.
 
 Access related Docker images at https://hub.docker.com/r/ma3310/ubuntu.
 
 ## ma3310/ubuntu:20.04-tools
 
-Image ma3310/ubuntu:20.04-tools integrates necessary utility tools to save time for users who need use Ubuntu image to diagnose system stauts, below tools are from official repository.
+Image ma3310/ubuntu:20.04-tools integrates below tools are from official repository:
 
 | Package       | Command  | Function                  |
 |---------------|----------|---------------------------|
