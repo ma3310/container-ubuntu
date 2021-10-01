@@ -22,12 +22,20 @@ Image ma3310/ubuntu:20.04-tools integrates below tools are from official reposit
 
 #### Docker
 
+For oh-my-zsh users on macOS, kindly add below to .zshrc after export ZSH statement as docker runs as root.
+
+``` zsh
+if [[ ! -d $ZSH ]]; then
+  export ZSH="/root/.oh-my-zsh"
+fi
+```
+
 ``` bash
 # Container will be automatically removed after issue exit command.
 docker run --rm -it ma3310/ubuntu:20.04-tools
 
 # Use own zsh environment to initialize console settings.
-docker run --rm -it -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
+docker run --rm -it -v ~/:/root/ ma3310/ubuntu:20.04-tools /bin/zsh
 
 # Diagnose localhost environment.
 docker run --rm -it --network=host -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
