@@ -33,9 +33,12 @@ fi
 ``` bash
 # Container will be automatically removed after issue exit command.
 docker run --rm -it ma3310/ubuntu:20.04-tools
+docker run --rm -it ma3310/ubuntu:22.04-tools
+docker run --rm -it ma3310/ubuntu:22.04-devBox
 
 # Use own zsh environment to initialize console settings.
 docker run --rm -it -v ~/:/root/ ma3310/ubuntu:20.04-tools /bin/zsh
+docker run --rm -it -v ~/:/root/ ma3310/ubuntu:22.04-tools /bin/zsh
 
 # Diagnose localhost environment.
 docker run --rm -it --network=host -v ~/:/root ma3310/ubuntu:20.04-tools /bin/zsh
